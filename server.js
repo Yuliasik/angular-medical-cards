@@ -3,10 +3,10 @@ const path = require('path');
 
 const ngApp = express();
 
-ngApp.use(express.static('./dist/dudii-medical-cards-ng'));
+ngApp.use(express.static('./dist'));
 
 ngApp.get('/*', function (request, response) {
-  response.sendFile(path.join(__dirname, '/dist/dudii-medical-cards-ng/index.html'));
+  response.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
 ngApp.listen(process.env.PORT || 8080);
