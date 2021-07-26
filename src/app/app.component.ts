@@ -17,6 +17,7 @@ export class AppComponent {
   }
 
   onActivate(reference): void {
+    console.log('activate!');
     if (reference.delete) {
       reference.delete.subscribe((param) => {
         this.deleteSubject.next(param);
