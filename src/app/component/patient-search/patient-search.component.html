@@ -1,0 +1,16 @@
+<div id="search-component">
+  <div class="search-block-input">
+    <label class="search-label" for="search-box">Patient search: </label>
+    <input #searchBox id="search-box" (focus)="show()" (focusout)="hide()"
+           (input)="search(searchBox.value)" placeholder="input to search"/>
+  </div>
+  <div class="search-block-result" [style.display]="isVisible ? 'block' : 'none'">
+    <ul class="search-list-result">
+      <li *ngFor="let patient of patients$ | async">
+        <a routerLink="/patients/detail/{{patient.id}}">
+          {{patient.firstName}}  {{patient.lastName}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

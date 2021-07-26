@@ -1,0 +1,82 @@
+.block-input-patient {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 5px 10px;
+  width: 60%;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.input-new-patient {
+  height: 45px !important;
+  width: 100%;
+  min-width: 200px;
+  color: #01234c;
+  border-radius: 20px;
+  border: 2px solid #0a53be;
+  background: snow;
+  box-shadow: 1px 1px 1px #0a53be;
+  margin-bottom: 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+.block-no-input {
+  background: snow;
+  color: #01234c;
+  border-radius: 20px;
+  border: 2px solid #0a53be;
+  box-shadow: 1px 1px 1px #0a53be;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.block-no-input-data {
+  background: snow;
+  color: #01234c;
+  border-radius: 20px;
+  border: 2px solid #01234c;
+  box-shadow: 1px 1px 1px #01234c;
+  padding: 4px;
+  padding-bottom: 6px;
+}
+
+.buttons-patient {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.submit-patient-button {
+  height: 45px;
+  width: 100px;
+  min-width: 90px;
+  border-radius: 20px;
+  background: #06347adb;
+  color: snow;
+  border: 2px solid #0a53be;
+  box-shadow: 1px 1px 1px #0a53be;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.submit-patient-button:active {
+  background: rgba(120, 165, 216, 0.489);
+  color: #01234c;
+}
+
+.img-doctor {
+  width: 20px;
+}
+
+.submit-patient-button:disabled {
+  background: rgba(120, 165, 216, 0.489);
+}
+
+.submit-patient-button:hover {
+  box-shadow: 0 3px 6px #06347afa;
+  transition: 0.5s;
+}

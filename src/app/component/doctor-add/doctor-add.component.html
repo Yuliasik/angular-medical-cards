@@ -1,0 +1,28 @@
+<div class="add-doctor">
+  <div class="text-doctor">Add new doctor:</div>
+  <div class="block-input-doctor">
+    <input class="input-doctor" type="text" placeholder="Enter doctor's first name"
+           (change)="changeForm()"
+           (input)="doctor.firstName = $event.target.value; changeForm()"
+           [value]="doctor.firstName">
+    <input class="input-doctor" type="text" placeholder="Enter doctor's last name"
+           (change)="changeForm()"
+           (input)="doctor.lastName = $event.target.value; changeForm()"
+           [value]="doctor.lastName">
+    <div class="buttons-doctor">
+      <button class="submit-doctor-button"
+              title="Clear form"
+              (click)="cancelDoctor()">
+        Cancel
+        <img class="img-doctor" src="assets/images/cancel-user.png">
+      </button>
+      <button class="submit-doctor-button"
+              [disabled]="isSaveDisabled"
+              [title]="titleSave"
+              (click)="addNewDoctor()">
+        Save
+        <img class="img-doctor" src="assets/images/add-user.png">
+      </button>
+    </div>
+  </div>
+</div>

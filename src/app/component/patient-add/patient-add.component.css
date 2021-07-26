@@ -1,0 +1,14 @@
+.block-add-patient {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-add-patient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  border-bottom: 5px solid #01234c;
+  font-size: 30px;
+}

@@ -1,0 +1,105 @@
+main {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-header {
+  height: 80px;
+  background: #01234c;
+  color: #ffffff;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 755px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  margin-top: 9px;
+  min-width: 1020px;
+}
+
+.navigation-header div {
+  color: white;
+  cursor: pointer;
+}
+
+.card {
+  display: block;
+  height: 50px;
+  width: 200px;
+  min-width: 200px;
+  font-size: 25px;
+  border: 3px solid ghostwhite;
+  background: rgb(7, 63, 130);
+  background: linear-gradient(13deg, rgba(7, 63, 130, 1) 0%, rgba(120, 177, 244, 1) 100%);
+  padding-top: 1px;
+  padding-left: 20px;
+  margin-left: 30px;
+  border-radius: 30px;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 15px rgba(107, 159, 219, 1),
+  0 1px 7.5px rgba(107, 159, 219, 1);
+  transition: all 0.9s;
+}
+
+.but {
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+.but:after {
+  content: '';
+  width: 0px;
+  display: block;
+  height: 1px;
+  border-style: solid;
+  border-color: #01234c;
+  border-width: 1px;
+  transition: 800ms;
+}
+
+.but:hover::after {
+  border-color: white;
+  width: 100%;
+  transition: all 0.8s;
+}
+
+.search {
+  width: 35%;
+  height: 80px;
+  min-width: 370px;
+  cursor: default;
+}
+
+app-patient-search {
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+
+.container-body {
+  width: 100%;
+  height: calc(100% - 100px);
+}
+
+.container-list {
+  width: 25%;
+  min-width: 250px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.block-outlet {
+  width: 75%;
+  height: 100%;
+  border: 5px solid #01234c;
+  border-left: none;
+  min-width: 765px;
+}

@@ -1,0 +1,24 @@
+<div class="block-list-comments">
+  <div class="list-comments">Comments:</div>
+  <ul class="comments">
+    <li *ngFor="let comment of comments">
+      <div class="one-comment">
+        <div class="all-common-information-about-comment">
+          <div>{{comment.dateCreating | date: 'd-MM-y HH:mm'}}</div>
+          <div>Dr. {{comment.doctor.firstName}} {{comment.doctor.lastName}}</div>
+          <div class="buttons-comment">
+            <button class="button-comment" (click)="commentEdit=comment" title="Edit comment">
+              <img class="img-comment" src="assets/images/edit.png"><br>
+            </button>
+          </div>
+        </div>
+        <div class="text-comment">
+          {{comment.text}}
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <app-comment-handler [comment]="commentEdit" (save)="save($event)"></app-comment-handler>
+  </div>
+</div>

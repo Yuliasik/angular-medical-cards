@@ -1,0 +1,27 @@
+<main>
+  <div class="navigation-header">
+    <a class="text-decoration-none" routerLink="" routerLinkActive="active">
+      <div class="card">MedicalCards</div>
+    </a>
+    <a class="text-decoration-none" routerLink="patient/add" routerLinkActive="active">
+      <div class="but">Add new patient</div>
+    </a>
+    <a class="text-decoration-none" routerLink="doctors" routerLinkActive="active">
+      <div class="but">Doctors</div>
+    </a>
+    <div class="search">
+      <app-patient-search></app-patient-search>
+    </div>
+  </div>
+  <div class="container-fluid overflow-hidden d-flex container-body">
+    <div class="container-list">
+      <app-patient-list [deleteEvent]="deleteSubject.asObservable()"
+                        [updateEvent]="updateSubject.asObservable()"
+                        [createEvent]="createSubject.asObservable()">
+      </app-patient-list>
+    </div>
+    <div class="block-outlet">
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+  </div>
+</main>

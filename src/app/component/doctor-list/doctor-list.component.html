@@ -1,0 +1,23 @@
+<div class="block-doctor">
+  <div class="header-doctor">Doctors</div>
+  <div class="body-doctor">
+    <div class="add-doctor">
+      <app-doctor-add [doctor]="doctorAdd" (save)="save($event)"></app-doctor-add>
+    </div>
+    <div class="block-doctors-list">
+      <div class="block-text">Doctors List:</div>
+      <ul class="doctors">
+        <li *ngFor="let doctor of doctors">
+          <div class="one-doctor">
+            <div class="full-name">
+              {{doctor.firstName}} {{doctor.lastName}}
+            </div>
+            <div>
+              <img class="img-doctor" src="assets/images/stethoscope.png" alt="image">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

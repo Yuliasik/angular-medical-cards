@@ -1,0 +1,60 @@
+<div class="block-input-patient">
+  <input class="input-new-patient" type="text" placeholder="Enter patient first name"
+         (change)="changeForm()"
+         (input)="patient.firstName = $event.target.value; changeForm()"
+         [value]="patient.firstName">
+  <input class="input-new-patient" type="text" placeholder="Enter patient last name"
+         (change)="changeForm()"
+         (input)="patient.lastName = $event.target.value; changeForm()"
+         [value]="patient.lastName">
+  <div class="block-no-input">
+    <p>Select your sex:</p>
+    <div>
+      <div>
+        <input type="radio" id="female" name="sex"
+               [checked]="isFemale" (change)="changeForm(); isFemale=$event.target.checked">
+        <label for="female">female</label>
+      </div>
+      <div>
+        <input type="radio" id="male"
+               name="sex"
+               [checked]="!isFemale" (change)="changeForm(); isFemale=!$event.target.checked">
+        <label for="male">male</label>
+      </div>
+    </div>
+  </div>
+  <div class="block-no-input">
+    <label for="bday">Enter patient birthday: </label>
+    <input class="block-no-input-data" type="date" id="bday" name="bday"
+           [value]="patient.birthday | date:'yyyy-MM-dd'"
+           (input)="patient.birthday = $event.target.value; changeForm()">
+  </div>
+  <input class="input-new-patient" type="text" placeholder="Enter patient country"
+         (change)="changeForm()"
+         (input)="patient.country = $event.target.value; changeForm()"
+         [value]="patient.country">
+  <input class="input-new-patient" type="text" placeholder="Enter patient state"
+         (change)="changeForm()"
+         (input)="patient.state = $event.target.value; changeForm()"
+         [value]="patient.state">
+  <input class="input-new-patient" type="text" placeholder="Enter patient address"
+         (change)="changeForm()"
+         (input)="patient.address = $event.target.value; changeForm()"
+         [value]="patient.address">
+  <div class="buttons-patient">
+    <button class="submit-patient-button"
+            title="Clear form"
+            (click)="cancelPatient()">
+      Cancel
+      <img class="img-doctor" src="assets/images/cancel-user.png">
+    </button>
+    <button class="submit-patient-button"
+            [disabled]="isSaveDisabled"
+            [title]="titleSave"
+            (click)="funcCheckSex(); savePatient.emit(patient)">
+      Save
+      <img class="img-doctor" src="assets/images/add-user.png">
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,51 @@
+<div class="block-show-patient" *ngIf="patient">
+  <div class="header-show-patient">
+    <div class="full-name">{{patient.firstName}} {{patient.lastName}}</div>
+    <div class="age-and-buttons">
+      <div class="age">{{this.age}} years old</div>
+      <div>
+        <button class="button-show-patient" title="Update patient"
+                (click)="showUpdateForm = !showUpdateForm">
+          <img class="img-show-patient" src="assets/images/{{showUpdateForm ? 'back' : 'edit'}}.png"><br>
+          {{showUpdateForm ? 'Back' : 'Edit'}}
+        </button>
+        <button class="button-show-patient" title="Delete patient" (click)="deletePatient()">
+          <img class="img-show-patient" src="assets/images/delete.png"><br>
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="body-show-patient" *ngIf="!showUpdateForm; else somename">
+    <div class="information-show-patient">
+      <table>
+        <tr>
+          <td class="table-description">Date of Birth:</td>
+          <td>{{patient.birthday | date: 'd MMMM y'}}</td>
+        </tr>
+        <tr>
+          <td class="table-description">Sex:</td>
+          <td>{{patient.sex.toLowerCase()}}</td>
+        </tr>
+        <tr>
+          <td class="table-description">Country:</td>
+          <td>{{patient.country}}</td>
+        </tr>
+        <tr>
+          <td class="table-description">State:</td>
+          <td>{{patient.state}}</td>
+        </tr>
+        <tr>
+          <td class="table-description">Address:</td>
+          <td>{{patient.address}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="comments-show-patient">
+      <app-comment-list></app-comment-list>
+    </div>
+  </div>
+  <ng-template #somename class="update-patient-data">
+    <app-patient-form (savePatient)="updatePatient($event)" [previousPatient]="patient"></app-patient-form>
+  </ng-template>
+</div>

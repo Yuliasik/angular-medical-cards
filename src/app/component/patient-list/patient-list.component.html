@@ -1,0 +1,27 @@
+<div class="block-list-patients">
+  <div class="list">Patients List</div>
+  <div class="patients-container">
+    <ul class="patients" *ngIf="patients.length; else empty">
+      <li *ngFor="let patient of patients">
+        <a routerLink="patients/detail/{{patient.id}}" routerLinkActive="active">
+          <div class="one-patient">
+            <div class="full-name">
+              {{patient.firstName}} {{patient.lastName}}
+              <div class="date">
+                {{patient.birthday | date: 'd MMMM y'}}
+              </div>
+            </div>
+            <div>
+              <img class="img-gender" src="assets/images/{{patient.sex.toLowerCase()}}.png" alt="image">
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <ng-template #empty>
+      <div class="empty-list">
+        <span>No patients here!</span>
+      </div>
+    </ng-template>
+  </div>
+</div>

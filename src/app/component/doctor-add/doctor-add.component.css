@@ -1,0 +1,72 @@
+.add-doctor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.text-doctor {
+  margin-bottom: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.block-input-doctor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  width: 80%;
+}
+
+.input-doctor {
+  height: 45px;
+  width: 100%;
+  min-width: 200px;
+  color: #01234c;
+  border-radius: 20px;
+  border: 2px solid #0a53be;
+  background: snow;
+  box-shadow: 1px 1px 1px #0a53be;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.buttons-doctor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.submit-doctor-button {
+  height: 45px;
+  width: 100px;
+  min-width: 90px;
+  border-radius: 20px;
+  background: #06347adb;
+  color: snow;
+  border: 2px solid #0a53be;
+  box-shadow: 1px 1px 1px #0a53be;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.submit-doctor-button:active {
+  background: rgba(120, 165, 216, 0.489);
+  color: #01234c;
+}
+
+.img-doctor {
+  width: 20px;
+}
+
+.submit-doctor-button:disabled {
+  background: rgba(120, 165, 216, 0.489);
+}
+
+.submit-doctor-button:hover {
+  box-shadow: 0 3px 6px #06347afa;
+  transition: 0.5s;
+}

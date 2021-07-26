@@ -1,0 +1,80 @@
+.block-show-patient {
+  width: 100%;
+  height: 100%;
+  min-width: 755px;
+}
+
+.header-show-patient {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 5px solid #01234c;
+}
+
+.full-name {
+  margin-left: 70px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: bold;
+  font-family: Monofur;
+}
+
+.button-show-patient {
+  height: 65px;
+  width: 110px;
+  min-width: 110px;
+  border-left: 2px solid #01234c;
+  font-size: 17px;
+  background-color: rgba(192, 201, 255, 0.197);
+}
+
+.button-show-patient:hover {
+  background-color: rgba(188, 202, 255, 0.333);
+}
+
+.img-show-patient {
+  width: 30px;
+}
+
+.button-show-patient:nth-child(1) {
+  margin-right: -5px;
+  border-right: 1px solid #01234c;
+}
+
+.age-and-buttons {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.age {
+  font-size: 20px;
+  font-family: Monofur;
+}
+
+.body-show-patient {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  height: 88%;
+}
+
+.information-show-patient {
+  width: 30%;
+  margin: 25px 30px 10px 30px;
+}
+
+.comments-show-patient {
+  width: 70%;
+  height: calc(99% - 10px);
+}
+
+.table-description {
+  width: 110px;
+}
+
