@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/dist/dudii-medical-cards-ng'));
 
 app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname+'/dist/dudii-medical-cards-ng/index.html'));
+  res.sendFile(path.join('index.html'));
 });
 
 // Start the app by listening on the default Heroku port
