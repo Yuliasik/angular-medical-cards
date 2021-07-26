@@ -1,16 +1,12 @@
-//Install express server
 const express = require('express');
 const path = require('path');
 
-const app = express();
+const ngApp = express();
 
-// Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/src/assets'));
+ngApp.use(express.static('./dist/dudii-medical-cards-ng'));
 
-app.get('/*', function(req,res) {
-
-  res.sendFile(__dirname + '/src/index.html');
+ngApp.get('/*', function (request, response) {
+  response.sendFile(path.join(__dirname, '/dist/dudii-medical-cards-ng/index.html'));
 });
 
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+ngApp.listen(process.env.PORT || 8080);
