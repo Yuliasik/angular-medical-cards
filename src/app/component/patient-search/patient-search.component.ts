@@ -12,8 +12,8 @@ import {debounceTime, distinctUntilChanged, switchMap} from "rxjs/operators";
 export class PatientSearchComponent implements OnInit {
 
   patients$: Observable<Patient[]>;
-  private searchTerms = new Subject<string>();
-  private isVisible = false;
+  searchTerms = new Subject<string>();
+  isVisible = false;
 
   constructor(private patientService: PatientService) {
   }
