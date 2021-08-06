@@ -1,12 +1,22 @@
 <div class="block-input-patient">
   <input class="input-new-patient" type="text" placeholder="Enter patient first name"
-         (change)="changeForm()"
-         (input)="patient.firstName = $event.target.value; changeForm()"
+         (change)="checkPatternFirstName()"
+         (input)="patient.firstName = $event.target.value; checkPatternFirstName()"
          [value]="patient.firstName">
+  <div class="conditions"
+       [hidden]="patternFirstName">
+    The first name must begin with capital letter and contain only latin letters or -(dash).
+    Example: Mark or Anna-Maria
+  </div>
   <input class="input-new-patient" type="text" placeholder="Enter patient last name"
-         (change)="changeForm()"
-         (input)="patient.lastName = $event.target.value; changeForm()"
+         (change)="checkPatternLastName()"
+         (input)="patient.lastName = $event.target.value; checkPatternLastName()"
          [value]="patient.lastName">
+  <div class="conditions"
+       [hidden]="patternLastName">
+    The last name must begin with capital letter and contain only latin letters or -(dash).
+    Example: Rivera, Zeta-Jones.
+  </div>
   <div class="block-no-input">
     <p>Select your sex:</p>
     <div>
@@ -27,20 +37,38 @@
     <label for="bday">Enter patient birthday: </label>
     <input class="block-no-input-data" type="date" id="bday" name="bday"
            [value]="patient.birthday | date:'yyyy-MM-dd'"
-           (input)="patient.birthday = $event.target.value; changeForm()">
+           (input)="patient.birthday = $event.target.value; changeForm(); checkPatternBirthday()">
+  </div>
+  <div class="conditions"
+       [hidden]="patternBirthday">
+    The birthday cannot be empty.
   </div>
   <input class="input-new-patient" type="text" placeholder="Enter patient country"
-         (change)="changeForm()"
-         (input)="patient.country = $event.target.value; changeForm()"
+         (change)="checkPatternCountry()"
+         (input)="patient.country = $event.target.value; checkPatternCountry()"
          [value]="patient.country">
+  <div class="conditions"
+       [hidden]="patternCountry">
+    The country must begin with capital letter and contain one or more capitalize or lower only latin letters or -(dash).
+    Example: USA, Ukraine, Costa Rica, Timor-Leste.
+  </div>
   <input class="input-new-patient" type="text" placeholder="Enter patient state"
-         (change)="changeForm()"
-         (input)="patient.state = $event.target.value; changeForm()"
+         (change)="checkPatternState()"
+         (input)="patient.state = $event.target.value; checkPatternState()"
          [value]="patient.state">
+  <div class="conditions"
+       [hidden]="patternState">
+    The state must begin with capital letter and contain one or more capitalize or lower only latin letters or -(dash).
+    Example: Florida, West Virginia, Trentino-Alto.
+  </div>
   <input class="input-new-patient" type="text" placeholder="Enter patient address"
-         (change)="changeForm()"
-         (input)="patient.address = $event.target.value; changeForm()"
+         (change)="checkPatternAddress()"
+         (input)="patient.address = $event.target.value; checkPatternAddress()"
          [value]="patient.address">
+  <div class="conditions"
+       [hidden]="patternAddress">
+    The address cannot be empty.
+  </div>
   <div class="buttons-patient">
     <button class="submit-patient-button"
             title="Clear form"

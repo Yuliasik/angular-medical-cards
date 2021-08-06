@@ -77,4 +77,9 @@
 .table-description {
   width: 110px;
 }
+.update-patient-data{
+  display: block;
+  height: calc(100% - 75px);
+  overflow-y: auto;
+}
 

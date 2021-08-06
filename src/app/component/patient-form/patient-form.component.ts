@@ -17,7 +17,12 @@ export class PatientFormComponent implements OnInit {
   titleSave: string;
   isFemale = false;
   patient: Patient;
-
+  patternFirstName = false;
+  patternLastName = false;
+  patternBirthday = false;
+  patternCountry = false;
+  patternState = false;
+  patternAddress = false;
 
   constructor(private patientService: PatientService,
               private router: Router,
@@ -57,17 +62,15 @@ export class PatientFormComponent implements OnInit {
     this.isSaveDisabled = true;
     this.titleSave = 'Not all fields valid or inputted';
     this.funcIsFemale();
+    this.checkAllFields();
   }
 
   changeForm() {
     this.funcCheckSex();
-    if (this.patient.firstName.match(/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/) &&
-      this.patient.lastName.match(/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/) &&
-      this.patient.sex &&
-      this.patient.birthday &&
-      this.patient.country.match(/^[A-Z](([A-Z]+)|([a-z])+)([ -][A-Z](([A-Z]+)|([a-z])+))*$/) &&
-      this.patient.state.match(/^[A-Z](([A-Z]+)|([a-z])+)([ -][A-Z](([A-Z]+)|([a-z])+))*$/) &&
-      this.patient.address) {
+    console.log(this.patternFirstName);
+    if (this.patternFirstName && this.patternLastName &&
+      this.patient.sex && this.patternBirthday &&
+      this.patternCountry && this.patternState && this.patternAddress) {
       this.isSaveDisabled = false;
       this.titleSave = 'Save patient';
     } else {
@@ -76,4 +79,66 @@ export class PatientFormComponent implements OnInit {
     }
   }
 
+  checkPatternFirstName() {
+    if (this.patient.firstName.match(/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/)) {
+      this.patternFirstName = true;
+    } else {
+      this.patternFirstName = false;
+    }
+    this.changeForm();
+  };
+
+  checkPatternLastName() {
+    if (this.patient.lastName.match(/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/)) {
+      this.patternLastName = true;
+    } else {
+      this.patternLastName = false;
+    }
+    this.changeForm();
+  };
+
+  checkPatternBirthday() {
+    if (this.patient.birthday) {
+      this.patternBirthday = true;
+    } else {
+      this.patternBirthday = false;
+    }
+    this.changeForm();
+  }
+
+  checkPatternCountry() {
+    if (this.patient.country.match(/^[A-Z](([A-Z]+)|([a-z])+)([ -][A-Z](([A-Z]+)|([a-z])+))*$/)) {
+      this.patternCountry = true;
+    } else {
+      this.patternCountry = false;
+    }
+    this.changeForm();
+  }
+
+  checkPatternState() {
+    if (this.patient.state.match(/^[A-Z](([A-Z]+)|([a-z])+)([ -][A-Z](([A-Z]+)|([a-z])+))*$/)) {
+      this.patternState = true;
+    } else {
+      this.patternState = false;
+    }
+    this.changeForm();
+  }
+
+  checkPatternAddress() {
+    if (this.patient.address) {
+      this.patternAddress = true;
+    } else {
+      this.patternAddress = false;
+    }
+    this.changeForm();
+  }
+
+  checkAllFields() {
+    this.checkPatternFirstName();
+    this.checkPatternLastName();
+    this.checkPatternBirthday();
+    this.checkPatternCountry();
+    this.checkPatternState();
+    this.checkPatternAddress();
+  }
 }

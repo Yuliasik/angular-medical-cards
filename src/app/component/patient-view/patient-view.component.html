@@ -45,7 +45,9 @@
       <app-comment-list></app-comment-list>
     </div>
   </div>
-  <ng-template #somename class="update-patient-data">
-    <app-patient-form (savePatient)="updatePatient($event)" [previousPatient]="patient"></app-patient-form>
-  </ng-template>
+<!--  <div >-->
+    <ng-template #somename>
+      <app-patient-form class="update-patient-data" (savePatient)="updatePatient($event)" [previousPatient]="patient"></app-patient-form>
+    </ng-template>
+<!--  </div>-->
 </div>

@@ -49,9 +49,29 @@ main {
   transition: all 0.9s;
 }
 
+.button-function {
+  /*background: #bb2d3b;*/
+  padding: 7px;
+  border-radius: 30px;
+  border: 2px solid white;
+  width: 190px;
+  display: flex;
+  justify-content: center;
+}
+.button-function:hover{
+  background: rgba(134,158,255,0.14);
+  transition: 800ms;
+  box-shadow: 0 2px 15px rgba(107, 159, 219, 1),
+  0 1px 7.5px rgba(107, 159, 219, 1);
+  transition: all 0.9s;
+}
+.button-function::after{
+  background: rgba(7, 63, 130, 1);
+  transition: 800ms;
+}
 .but {
   font-size: 20px;
-  margin-left: 50px;
+  /*margin-left: 50px;*/
 }
 
 .but:after {
@@ -103,3 +123,4 @@ app-patient-search {
   border-left: none;
   min-width: 765px;
 }
+
